@@ -1,6 +1,6 @@
 # bugsquash
 
-A new Flutter project.
+A new Flutter project for BugSquash 2022.
 
 ## Getting Started
 
