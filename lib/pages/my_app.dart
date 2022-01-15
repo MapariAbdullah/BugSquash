@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
-class RootApp extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _RootAppState createState() => _RootAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _RootAppState extends State<RootApp> {
+class _MyAppState extends State<MyApp> {
   int pageIndex = 0;
   List<Widget> pages = [
     DailyPage(),
@@ -25,7 +25,6 @@ class _RootAppState extends State<RootApp> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -47,9 +46,7 @@ class _RootAppState extends State<RootApp> {
               Icons.add,
               size: 25,
             ),
-            backgroundColor: Colors.pink
-            //params
-            ),
+            backgroundColor: Colors.pink),
         floatingActionButtonLocation:
             FloatingActionButtonLocation.centerDocked);
   }

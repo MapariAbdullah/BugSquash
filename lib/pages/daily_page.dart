@@ -1,5 +1,4 @@
 import 'package:budget_tracker_ui/json/daily_json.dart';
-import 'package:budget_tracker_ui/json/day_month.dart';
 import 'package:budget_tracker_ui/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -30,7 +29,6 @@ class _DailyPageState extends State<DailyPage> {
                 color: grey.withOpacity(0.01),
                 spreadRadius: 10,
                 blurRadius: 3,
-                // changes position of shadow
               ),
             ]),
             child: Padding(
@@ -54,55 +52,6 @@ class _DailyPageState extends State<DailyPage> {
                   SizedBox(
                     height: 25,
                   ),
-                  Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: List.generate(days.length, (index) {
-                        return GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              activeDay = index;
-                            });
-                          },
-                          child: Container(
-                            width: (MediaQuery.of(context).size.width - 40) / 7,
-                            child: Column(
-                              children: [
-                                Text(
-                                  days[index]['label'],
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  width: 30,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                      color: activeDay == index
-                                          ? primary
-                                          : Colors.transparent,
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                          color: activeDay == index
-                                              ? primary
-                                              : black.withOpacity(0.1))),
-                                  child: Center(
-                                    child: Text(
-                                      days[index]['day'],
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w600,
-                                          color: activeDay == index
-                                              ? white
-                                              : black),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        );
-                      }))
                 ],
               ),
             ),
@@ -178,7 +127,7 @@ class _DailyPageState extends State<DailyPage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
-                                  color: Colors.green),
+                                  color: index < 2 ? Colors.green : Colors.red),
                             ),
                           ],
                         ),

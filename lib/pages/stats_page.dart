@@ -1,10 +1,7 @@
 import 'package:budget_tracker_ui/json/day_month.dart';
 import 'package:budget_tracker_ui/theme/colors.dart';
-import 'package:budget_tracker_ui/widget/chart.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:fl_chart/fl_chart.dart';
 
 class StatsPage extends StatefulWidget {
   @override
@@ -133,7 +130,7 @@ class _StatsPageState extends State<StatsPage> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Container(
               width: double.infinity,
-              height: 250,
+              height: 100,
               decoration: BoxDecoration(
                   color: white,
                   borderRadius: BorderRadius.circular(12),
@@ -142,7 +139,6 @@ class _StatsPageState extends State<StatsPage> {
                       color: grey.withOpacity(0.01),
                       spreadRadius: 10,
                       blurRadius: 3,
-                      // changes position of shadow
                     ),
                   ]),
               child: Padding(
@@ -176,16 +172,6 @@ class _StatsPageState extends State<StatsPage> {
                         ],
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      child: Container(
-                        width: (size.width - 20),
-                        height: 150,
-                        child: LineChart(
-                          mainData(),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
