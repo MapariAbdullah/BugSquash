@@ -1,7 +1,5 @@
-import 'package:budget_tracker_ui/pages/budget_page.dart';
 import 'package:budget_tracker_ui/pages/create_budge_page.dart';
 import 'package:budget_tracker_ui/pages/daily_page.dart';
-import 'package:budget_tracker_ui/pages/profile_page.dart';
 import 'package:budget_tracker_ui/pages/stats_page.dart';
 import 'package:budget_tracker_ui/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int pageIndex = 0;
-  List<Widget> pages = [
-    DailyPage(),
-    StatsPage(),
-    BudgetPage(),
-    ProfilePage(),
-    CreatBudgetPage()
-  ];
+  List<Widget> pages = [DailyPage(), StatsPage(), CreatBudgetPage()];
 
   @override
   void initState() {
@@ -62,8 +54,8 @@ class _MyAppState extends State<MyApp> {
     List<IconData> iconItems = [
       Ionicons.md_calendar,
       Ionicons.md_stats,
-      Ionicons.md_wallet,
-      Ionicons.ios_person,
+      //Ionicons.md_wallet,
+      //Ionicons.ios_person,
     ];
 
     return AnimatedBottomNavigationBar(
@@ -80,7 +72,6 @@ class _MyAppState extends State<MyApp> {
       onTap: (index) {
         selectedTab(index);
       },
-      //other params
     );
   }
 

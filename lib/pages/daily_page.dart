@@ -72,21 +72,6 @@ class _DailyPageState extends State<DailyPage> {
                         width: (size.width - 40) * 0.7,
                         child: Row(
                           children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: grey.withOpacity(0.1),
-                              ),
-                              child: Center(
-                                child: Image.asset(
-                                  daily[index]['icon'],
-                                  width: 30,
-                                  height: 30,
-                                ),
-                              ),
-                            ),
                             SizedBox(width: 15),
                             Container(
                               width: (size.width - 90) * 0.5,
